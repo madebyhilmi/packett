@@ -1,6 +1,8 @@
 ext {
     guavaVersion = '28.1-jre'
     jettyVersion = '9.4.31.v20200723'
+
+    slf4jVersion = '1.7.26'
 }
 
 dependencies {
@@ -16,6 +18,13 @@ dependencies {
     implementation "org.eclipse.jetty.websocket:websocket-client:$jettyVersion"
     implementation "org.eclipse.jetty.websocket:websocket-servlet:$jettyVersion"
     implementation "org.eclipse.jetty.websocket:websocket-server:$jettyVersion"
+
+    // Logging
+    implementation "org.slf4j:slf4j-api:$slf4jVersion"
+    // Jersey uses java.util.logging - Redirect it to SLF4j
+    implementation "org.slf4j:jul-to-slf4j:$slf4jVersion"
+    testImplementation "org.slf4j:slf4j-simple:$slf4jVersion"
+
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'

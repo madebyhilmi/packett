@@ -1,15 +1,16 @@
 plugins {
     id 'java'
 }
+repositories {
+    mavenCentral()
+}
 
 group 'org.hilmi'
 version '1.0'
 
 apply from: "$rootDir/commonDependencies.gradle"
 
-repositories {
-    mavenCentral()
-}
+
 
 test {
     useJUnitPlatform()
