@@ -1,5 +1,8 @@
 package org.hilmi.packett.infrastructure.jetty.websocket.server;
 
+import java.io.IOException;
+import java.nio.ByteBuffer;
+
 import org.eclipse.jetty.websocket.api.RemoteEndpoint;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.WebSocketListener;
@@ -12,6 +15,14 @@ public class WebSocketAdapter implements WebSocketListener
     private volatile Session session;
     private RemoteEndpoint remote;
 
+    public WebSocketAdapter(){
+    }
+
+    public WebSocketAdapter(Session session) {
+        this.session = session;
+        this.remote = session.getRemote();
+    }
+
     public RemoteEndpoint getRemote()
     {
         return remote;
@@ -22,17 +33,31 @@ public class WebSocketAdapter implements WebSocketListener
         return session;
     }
 
-    public boolean isConnected()
+
+    /**
+     * Sends a message through the websocket
+     * @param message String of the message to be sent through the websocket
+     * @throws IOException when we can't send the message
+     */
+    public void sendMessage(String message) throws IOException
     {
-        Session sess = this.session;
-        return (sess != null) && (sess.isOpen());
+        assert session != null;
+        session.getRemote()
+                .sendString(message);
     }
 
-    public boolean isNotConnected()
+    /**
+     * Sends a message through the websocket
+     * @param message Bytebuffer of the message to be sent through the websocket
+     * @throws IOException when we can't send the message
+     */
+    public void sendMessage(ByteBuffer message) throws IOException
     {
-        Session sess = this.session;
-        return (sess == null) || (!sess.isOpen());
+        assert session != null;
+        session.getRemote()
+                .sendBytes(message);
     }
+
 
     @Override
     public void onWebSocketBinary(byte[] payload, int offset, int len)
