@@ -2,7 +2,7 @@ ext {
     guavaVersion = '28.1-jre'
     jettyVersion = '9.4.31.v20200723'
 
-    slf4jVersion = '1.7.26'
+    slf4jVersion = '1.7.31'
 }
 
 dependencies {
@@ -10,7 +10,6 @@ dependencies {
     implementation "com.google.guava:guava:$guavaVersion"
 
     // Jetty
-    //   These are the Jetty libs used by DDT
     implementation "org.eclipse.jetty:jetty-server"
     implementation "org.eclipse.jetty:jetty-servlet"
     implementation "org.eclipse.jetty:jetty-servlets"
@@ -19,11 +18,20 @@ dependencies {
     implementation "org.eclipse.jetty.websocket:websocket-servlet:$jettyVersion"
     implementation "org.eclipse.jetty.websocket:websocket-server:$jettyVersion"
 
+
+    //   Constrain the version of these Jetty libs to ensure they are all the same regardless if they're transitive or not
+    constraints {
+        implementation "org.eclipse.jetty:jetty-server:$jettyVersion"
+        implementation "org.eclipse.jetty:jetty-servlet:$jettyVersion"
+        implementation "org.eclipse.jetty:jetty-servlets:$jettyVersion"
+        implementation "org.eclipse.jetty.websocket:websocket-api:$jettyVersion"
+        implementation "org.eclipse.jetty.websocket:websocket-client:$jettyVersion"
+        implementation "org.eclipse.jetty.websocket:websocket-servlet:$jettyVersion"
+    }
+
     // Logging
     implementation "org.slf4j:slf4j-api:$slf4jVersion"
-    // Jersey uses java.util.logging - Redirect it to SLF4j
-    implementation "org.slf4j:jul-to-slf4j:$slf4jVersion"
-    testImplementation "org.slf4j:slf4j-simple:$slf4jVersion"
+    implementation "org.slf4j:slf4j-simple:1.7.31"
 
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'

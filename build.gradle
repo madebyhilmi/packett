@@ -1,16 +1,35 @@
 plugins {
     id 'java'
+
 }
+
+project.sourceCompatibility = ext['javaVersion']
+project.targetCompatibility = ext['javaVersion']
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+apply from: "$rootDir/commonDependencies.gradle"
+
+wrapper {
+    gradleVersion = '6.8'
+}
+
 repositories {
     mavenCentral()
 }
 
-group 'org.hilmi'
-version '1.0'
+def getSemanticVersion() {
+    return new File("${projectDir}/VERSION.txt").text.trim()
+}
 
-apply from: "$rootDir/commonDependencies.gradle"
+ext {
+    vendor = 'Hilmi Abou-Saleh'
+    semanticVersion = getSemanticVersion()
+}
 
+version = project.ext.semanticVersion
 
+group = 'org.hilmi'
 
 test {
     useJUnitPlatform()
