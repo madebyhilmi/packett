@@ -1,4 +1,4 @@
-package org.hilmi.packett.exception;
+package org.hilmi.packett.api.exception;
 
 /**
  * Exception thrown when there is an exception while validating WebSocketMessage request

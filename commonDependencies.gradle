@@ -1,0 +1,22 @@
+ext {
+    guavaVersion = '28.1-jre'
+    jettyVersion = '9.4.31.v20200723'
+}
+
+dependencies {
+    // Guava
+    implementation "com.google.guava:guava:$guavaVersion"
+
+    // Jetty
+    //   These are the Jetty libs used by DDT
+    implementation "org.eclipse.jetty:jetty-server"
+    implementation "org.eclipse.jetty:jetty-servlet"
+    implementation "org.eclipse.jetty:jetty-servlets"
+    implementation "org.eclipse.jetty.websocket:websocket-api:$jettyVersion"
+    implementation "org.eclipse.jetty.websocket:websocket-client:$jettyVersion"
+    implementation "org.eclipse.jetty.websocket:websocket-servlet:$jettyVersion"
+    implementation "org.eclipse.jetty.websocket:websocket-server:$jettyVersion"
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}

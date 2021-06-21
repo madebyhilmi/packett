@@ -1,8 +1,8 @@
-package org.hilmi.packett.events;
+package org.hilmi.packett.api.events;
 
-import org.hilmi.packett.Connection;
-import org.hilmi.packett.dao.Message;
-import org.hilmi.packett.validation.Validator;
+import org.hilmi.packett.api.Connection;
+import org.hilmi.packett.api.dao.Message;
+import org.hilmi.packett.api.validation.Validator;
 
 
 public class Event<T> {

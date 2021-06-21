@@ -1,4 +1,4 @@
-package org.hilmi.packett.exception;
+package org.hilmi.packett.api.exception;
 
 import java.io.IOException;
 

@@ -1,7 +1,7 @@
-package org.hilmi.packett.events;
+package org.hilmi.packett.api.events;
 
 
-import org.hilmi.packett.validation.Validator;
+import org.hilmi.packett.api.validation.Validator;
 
 public class ReceiveMessageEvent extends Event<ReceiveMessageEvent> {
     private final Validator validator;

@@ -1,4 +1,4 @@
-package org.hilmi.packett.events;
+package org.hilmi.packett.api.events;
 
 public class ReceivedMessageEvent<T> extends Event<ReceivedMessageEvent<T>>
 {

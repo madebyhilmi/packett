@@ -1,16 +1,16 @@
-package org.hilmi.packett;
+package org.hilmi.packett.api;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-import org.hilmi.packett.events.CloseConnectionEvent;
-import org.hilmi.packett.events.EstablishConnectionEvent;
-import org.hilmi.packett.events.Event;
-import org.hilmi.packett.events.ReceiveDisconnectEvent;
-import org.hilmi.packett.events.ReceiveMessageEvent;
-import org.hilmi.packett.events.ReceivePersistentMessageEvent;
-import org.hilmi.packett.events.SendMessageEvent;
-import org.hilmi.packett.validation.Validator;
+import org.hilmi.packett.api.events.CloseConnectionEvent;
+import org.hilmi.packett.api.events.EstablishConnectionEvent;
+import org.hilmi.packett.api.events.Event;
+import org.hilmi.packett.api.events.ReceiveDisconnectEvent;
+import org.hilmi.packett.api.events.ReceiveMessageEvent;
+import org.hilmi.packett.api.events.ReceivePersistentMessageEvent;
+import org.hilmi.packett.api.events.SendMessageEvent;
+import org.hilmi.packett.api.validation.Validator;
 
 public class Expectations
 {

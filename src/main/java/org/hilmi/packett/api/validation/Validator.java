@@ -1,7 +1,7 @@
-package org.hilmi.packett.validation;
+package org.hilmi.packett.api.validation;
 
-import org.hilmi.packett.dao.Message;
-import org.hilmi.packett.exception.RequestValidationException;
+import org.hilmi.packett.api.dao.Message;
+import org.hilmi.packett.api.exception.RequestValidationException;
 
 /**
  * Functional interface for validating WebSocketMessage

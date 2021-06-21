@@ -1,6 +1,6 @@
-package org.hilmi.packett.events;
+package org.hilmi.packett.api.events;
 
-import org.hilmi.packett.Connection;
+import org.hilmi.packett.api.Connection;
 
 public class EstablishConnectionEvent extends Event<EstablishConnectionEvent> {
 

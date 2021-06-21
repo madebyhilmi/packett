@@ -1,4 +1,4 @@
-package org.hilmi.packett.events;
+package org.hilmi.packett.api.events;
 
 public class ReceiveDisconnectEvent extends Event<ReceiveDisconnectEvent>
 {
