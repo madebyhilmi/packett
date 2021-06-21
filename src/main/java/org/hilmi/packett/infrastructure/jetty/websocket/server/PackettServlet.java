@@ -22,6 +22,7 @@ public class PackettServlet extends WebSocketServlet
 
     /**
      * Configures the servlet to use the websocket listener and adapters so we have control over communication
+     *
      * @param factory WebSocketServletFactory that builds the websocket
      */
     @Override
@@ -35,6 +36,7 @@ public class PackettServlet extends WebSocketServlet
 
     /**
      * Configures the web socket policy of the connected server
+     *
      * @param webSocketPolicy WebSocketPolicy that is used to configure the websocket
      */
     private static void configureWebSocketPolicy(final WebSocketPolicy webSocketPolicy)

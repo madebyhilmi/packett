@@ -3,10 +3,12 @@ package org.hilmi.packett.infrastructure.jetty.websocket.server;
 import org.eclipse.jetty.websocket.api.RemoteEndpoint;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.WebSocketListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class WebSocketAdapter implements WebSocketListener
 {
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(WebSocketAdapter.class);
     private volatile Session session;
     private RemoteEndpoint remote;
 
@@ -62,5 +64,6 @@ public class WebSocketAdapter implements WebSocketListener
     public void onWebSocketText(String message)
     {
         /* do nothing */
+        LOGGER.info("Received message: {}", message);
     }
 }
